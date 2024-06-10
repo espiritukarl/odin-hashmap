@@ -1,4 +1,5 @@
 import { HashMap } from "./hashMap.js";
+import { HashSet } from "./hashSet.js";
 
 
 const hashMap = new HashMap();
@@ -107,3 +108,27 @@ console.log("length:", hashMap.length());
 // console.log("values:", hashMap.values());
 // console.log("entries:", hashMap.entries());
 // console.log(hashMap)
+
+
+// ==================================! HASHSET !==========================================
+const set = new HashSet();
+set.set("apple")
+set.set("banana")
+set.set("orange")
+set.set("grape")
+set.set(1)
+set.set(2)
+set.set(3)
+set.set(4)
+const obj1 = { name: "John", age: 30 }
+const obj2 = { name: "Alice", age: 25 }
+const obj3 = { name: "Bob", age: 35 }
+set.set(obj1)
+set.set(obj2)
+set.set(obj3)
+console.log("Hashset Keys:", set.keys())
+console.log(set.has("banana")); // Output: true
+console.log(set.has("watermelon")); // Output: false
+console.log(set.length())
+set.clear();
+console.log(set.length())
