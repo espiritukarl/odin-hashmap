@@ -1,0 +1,10 @@
+{
+  "name": "odin-hashmap",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "Implement HashMap with functions",
+  "scripts": {
+    "start": "node example.mjs"
+  }
+}
