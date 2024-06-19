@@ -152,18 +152,17 @@ export class HashMap {
     }
 
     resize() {
-        if (this.length() > Math.ceil(this.capacity * this.loadFactor)) {
-            this.capacity = this.capacity * 2
-            let newBuckets = this.buckets
-            this.buckets = new Array(this.capacity).fill(null)
+        if (this.length() <= Math.ceil(this.capacity * this.loadFactor) return
+        this.capacity = this.capacity * 2
+        let newBuckets = this.buckets
+        this.buckets = new Array(this.capacity).fill(null)
 
-            newBuckets.forEach(bucket => {
-                let currentNode = bucket
-                while (currentNode) {
-                    this.set(currentNode.key, currentNode.value)
-                    currentNode = currentNode.nextNode
-                }
-            })
-        }
+        newBuckets.forEach(bucket => {
+            let currentNode = bucket
+            while (currentNode) {
+                this.set(currentNode.key, currentNode.value)
+                currentNode = currentNode.nextNode
+            }
+        })
     }
 }
